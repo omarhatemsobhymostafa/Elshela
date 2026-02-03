@@ -8,8 +8,17 @@
 </head>
 <body>
     <div id="container">
-           <button id="add-player-btn" onclick="AddPlayer()">  في لاعب جديد ؟  </button>
-    <a href="game.html" id='start'>ابدء يلا </a>
+      <form id="add-player-form" class="add-player-row" autocomplete="off" novalidate>
+        <input id="player-name-input" class="player-input" type="text" placeholder="أدخل اسم اللاعب..." aria-label="اسم اللاعب" maxlength="30" />
+        <button id="add-player-btn" type="submit">أضف لاعب</button>
+        <a href="game.html" id='start' class="start-link">ابدأ يلا</a>
+      </form>
+      <div class="category-row">
+        <label for="category-select" class="category-label">تصنيف الكلمات</label>
+        <select id="category-select" class="category-select" aria-label="تصنيف الكلمات">
+          <option value="الكل">الكل</option>
+        </select>
+      </div>
     <h2>الي بيلعبو</h2>
     <div id="players"></div>
     <div id="status" aria-live="polite" style="margin-top:.5rem;color:#444"></div>

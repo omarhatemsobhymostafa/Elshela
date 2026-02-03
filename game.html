@@ -17,18 +17,30 @@
 
     <div id="current-player" class="fade-in" style="font-weight:bold; margin-bottom:1rem"></div>
 
-    <div style="display:flex;gap:.5rem;">
-      <button id="reveal-btn" class="btn" onclick="revalSpy()">انا الجاسوس ولا لا</button>
-      <button id="next-btn" class="btn" onclick="next()">البعدووو</button>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:center">
+      <button id="reveal-btn" class="btn">انا الجاسوس ولا لا</button>
+      <button id="next-btn" class="btn">البعدووو</button>
     </div>
 
     <div id="result"></div>
 
     <div id="question-time" style="display:none; margin-top:1rem;">
       <h3>وقت الاسئلة</h3>
-      <div style="margin-bottom:.5rem">    حوله تقفشو الجاسوس</div>
+      <div style="margin-bottom:.5rem"> اسئلوا اسئلة عن الموضوع علشان تعرفو مين الجاسوس</div>
       <button id="play-again">العب مره تانيه</button>
       <button id="end-game">كفاية كدا</button>
+      <button id="accuse-in-questions" class="btn">اتفقنا مين الجاسوس</button>
+    </div>
+
+    <!-- accuse modal -->
+    <div id="accuse-modal" class="modal" style="display:none">
+      <div class="modal-panel">
+        <h3>اتفقنا مين الجاسوس؟</h3>
+        <div id="accuse-list" class="modal-list"></div>
+        <div style="margin-top:8px;text-align:right">
+          <button id="accuse-close" class="btn">إلغاء</button>
+        </div>
+      </div>
     </div>
 
   </div>
