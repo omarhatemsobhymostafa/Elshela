@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+
+    <header style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <a id="start" href="index.html">الرجوع</a>
+
+      <div id="status" aria-live="polite" style="color:var(--muted)"></div>
+    </header>
+
+    <div id="current-player" class="fade-in" style="font-weight:bold; margin-bottom:1rem"></div>
+
+    <div style="display:flex;gap:.5rem;">
+      <button id="reveal-btn" class="btn" onclick="revalSpy()">انا الجاسوس ولا لا</button>
+      <button id="next-btn" class="btn" onclick="next()">البعدووو</button>
+    </div>
+
+    <div id="result"></div>
+
+    <div id="question-time" style="display:none; margin-top:1rem;">
+      <h3>وقت الاسئلة</h3>
+      <div style="margin-bottom:.5rem">    حوله تقفشو الجاسوس</div>
+      <button id="play-again">العب مره تانيه</button>
+      <button id="end-game">كفاية كدا</button>
+    </div>
+
+  </div>
+</body>
+<script src="index.js"></script>
+</html>

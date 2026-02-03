@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+
+:root{
+  --bg-1: #f6f0ff;
+  --accent-1: #6d00eb;
+  --accent-2: #aa00ff;
+  --muted: #6b6b6b;
+  --card-bg: #ffffff;
+  --danger: #e53935;
+}
+
+*{
+    box-sizing:border-box;
+      font-family: "Cairo", sans-serif;
+}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Cairo', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg, var(--bg-1) 0%, #fff 100%);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+
+#container{
+  width:100%;
+  max-width:880px;
+  background:var(--card-bg);
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(30,20,60,0.08);
+  padding:1.25rem 1.5rem;
+}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+
+#add-player-btn, #start, .btn{
+  appearance:none;
+  display:inline-block;
+  padding:.6rem 1rem;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:700;
+  text-decoration:none;
+}
+
+#add-player-btn{
+  background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  color:#fff;
+  border-radius:8px;
+  border:0;
+}
+#add-player-btn:hover{transform:translateY(-2px)}
+
+#start{
+  background:transparent;
+  color:var(--accent-1);
+  border:2px solid rgba(109,0,235,0.12);
+  padding:.5rem .75rem;
+}
+#start:hover{background:rgba(109,0,235,0.06)}
+
+h2{margin:1rem 0;color:var(--muted);font-weight:600}
+
+#players{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:12px}
+.player-item{
+  background:linear-gradient(180deg,#fff, #fbfbfb);
+  padding:.6rem .8rem;
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  box-shadow:0 4px 10px rgba(30,20,60,0.03);
+}
+.player-item span{font-weight:600}
+
+.remove-player{
+  background:transparent;
+  color:var(--danger);
+  border:1px solid rgba(229,57,53,0.08);
+  padding:.35rem .5rem;
+  border-radius:6px;
+  cursor:pointer;
+}
+.remove-player:hover{background:rgba(229,57,53,0.06)}
+
+#status{color:var(--muted);font-size:.95rem;margin-top:.6rem}
+
+/* game view */
+#current-player{background:linear-gradient(90deg,#fff8f3,#fff);padding:1rem;border-radius:10px;margin-bottom:12px;font-size:1.05rem;box-shadow:0 6px 18px rgba(30,20,60,0.04)}
+#result{background:#fffdfa;padding:.9rem;border-radius:10px;margin-top:10px;border-left:4px solid rgba(109,0,235,0.25);font-weight:700}
+
+#question-time{border:1px dashed rgba(109,0,235,0.12);padding:1rem;border-radius:8px;background:linear-gradient(180deg,#fff,#fcf8ff)}
+#question-time h3{margin:0 0 .5rem 0;color:var(--accent-1)}
+#question-time button{margin-right:8px;padding:.5rem .8rem;border-radius:8px;border:0}
+#question-time #play-again{background:var(--accent-1);color:#fff}
+#question-time #end-game{background:transparent;border:1px solid rgba(0,0,0,0.06)}
+
+/* small screens */
+@media (max-width:520px){
+  #container{padding:1rem}
+  #players{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+  #add-player-btn{padding:.5rem .75rem}
+}
+
+/* subtle animation */
+.fade-in{animation:fadeIn .35s ease-out}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
